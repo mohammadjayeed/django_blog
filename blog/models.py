@@ -24,7 +24,7 @@ class Blog(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     blog_image = models.ImageField(upload_to='uploads/%Y/%m/%d')
     short_description = models.TextField(max_length=200, blank=True, null=True)
-    blog_body = models.CharField(max_length=2000)
+    blog_body = models.TextField(max_length=2000)
     is_featured = models.BooleanField(default=False)
     status = models.CharField(max_length=20, choices=STATUS, default='Draft')
     created_at = models.DateTimeField(auto_now_add=True)
